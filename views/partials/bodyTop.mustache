@@ -1,0 +1,13 @@
+  <div id="pjax-container">
+    <div class="d-flex flex-column" style="min-height: 100vh;">
+      <div class="d-flex flex-row">
+        <div class="p-3">
+          {{>nav}}
+        </div>
+        <div class="p-3 text-right flex-grow-1">
+          <!-- Save space for an install prompt so that we don't reflow -->
+          <span id="install-prompt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span id="status"></span>
+          {{>userStatus}}
+        </div>
+      </div>

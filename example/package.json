@@ -1,0 +1,32 @@
+{
+  "name": "pjax-pwa-overlay-example",
+  "version": "0.1.0",
+  "description": "A set of mustache templates to be used with express-mustache-overlays and bootstrap-flexbox-overlay that add PJAX (PushState+AJAX) and Progressive Web App support to a project.",
+  "scripts": {
+    "docker:build": "echo 'Docker cannnot copy files from a parent directory so we need to put the current dev version of pjax-pwa-overlay in this directory and change package.json'; mkdir -p pjax-pwa-overlay ; rsync --delete --exclude='example' --exclude='*.DS_Store' --exclude='.git' --exclude='node_modules' -aHxv ../ pjax-pwa-overlay/ ; cat package.json | sed -e 's|file:..|file:pjax-pwa-overlay|g' > package.json.docker ; docker build . -t thejimmyg/pjax-pwa-overlay:0.1.0",
+    "docker:push": "docker push thejimmyg/pjax-pwa-overlay:0.1.0",
+    "docker:tag:test": "docker image tag thejimmyg/pjax-pwa-overlay:0.1.0 thejimmyg/pjax-pwa-overlay:test",
+    "docker:push:test": "docker push thejimmyg/pjax-pwa-overlay:test",
+    "docker:run": "docker run -e WITH_PJAX_PWA='true' -e DEBUG'=pjax-pwa-overlay:server,pjax-pwa-overlay' -e PORT=80 --init -p 80:80 thejimmyg/pjax-pwa-overlay:0.1.0",
+    "fix": "standard --fix",
+    "start": "node server.js"
+  },
+  "author": "JimmyG",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-flexbox-overlay": "^0.1.3",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "express-mustache-overlays": "^0.5.2",
+    "express-public-files-overlays": "^0.1.2",
+    "express-render-error": "^0.1.3",
+    "pjax-pwa-overlay": "file:.."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:thejimmyg/pjax-pwa-overlay.git"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}
