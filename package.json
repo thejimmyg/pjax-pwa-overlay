@@ -5,6 +5,12 @@
   "scripts": {
     "fix": "standard --fix"
   },
+  "standard": {
+    "ignore": [
+      "public/**/*.js",
+      "example/pjax-pwa-overlay/**/*.js"
+    ]
+  },
   "author": "JimmyG",
   "license": "MIT",
   "dependencies": {
