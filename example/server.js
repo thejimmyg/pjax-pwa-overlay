@@ -18,7 +18,14 @@ prepareTheme(app, bootstrapOptionsFromEnv(app))
 const options = pjaxPwaOptionsFromEnv(app)
 debug('Options:', options)
 debug(JSON.stringify(app.locals.theme))
-preparePjaxPwa(app, options)
+const urlsToCache = [
+  ['/public/bootstrap.min.css'],
+  ['/public/bootstrap.min.js'],
+  ['/public/jquery-3.3.1.min.js'],
+  ['/public/jquery-pjax-2.0.1.js'],
+  ['/public/popper.min.js']
+]
+preparePjaxPwa(app, Object.assign({}, { urlsToCache }, options))
 
 app.locals.mustache.overlay([path.join(__dirname, 'views-overlay')])
 setupPjaxPwa(app)

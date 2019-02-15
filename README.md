@@ -40,6 +40,11 @@ npm run fix
 
 ## Changelog
 
+### 0.2.1 2019-02-15
+
+* Changed `setupPjaxPwa()` so that any config specified overrides the values in `app.locals.theme` and `app.locals.pjaxPwa` for the purposes of setting up the PJAX PWA
+* Updated the example so that it caches the public files it needs using service worker
+
 ### 0.2.0 2019-02-15
 
 * Make `WITH_PJAX_PWA` `true` by default
