@@ -14,9 +14,13 @@ See `./example` for a full example and tutorial.
 
 All the environment variables from express-render-error, express-mustache-overlays and express-public-files-overlays are available in the example, but the following are also available from `bootstrapOptionsFromEnv()`:
 
-* `WITH_PJAX_PWA` - enable or disable the PJAX PWA support, defaults to `'true'`, set to `'false'` to disable PWA support
 * `NETWORK_ERROR_URL` - the URL the PWA should fetch to use in case there is a network error in future
 * `START_URL` - the URL the PWA should fetch to use each time the site is opened (after the user has installed the app)
+* `WITH_PJAX_PWA` - enable or disable the PJAX PWA support, defaults to `'true'`, set to `'false'` to disable PWA support
+* `WITH_START_PAGE` - setup a route handler at the `startUrl` that renders the template `start` to generate the start page. Defaults to `true`.
+* `WITH_NETWORK_ERROR_PAGE` - setup a route handler at the `networkErrorUrl` that renders the template `networkError` to generate the network error page. Defaults to `true`.
+* `START_PAGE_TITLE` - The title of the start page. Defaults to `'Start'`.
+* `NETWORK_ERROR_PAGE_TITLE` - The title of the network error page. Defaults to `'Network Error'`
 
 
 ## PJAX Links and Forms
@@ -39,6 +43,12 @@ npm run fix
 
 
 ## Changelog
+
+### 0.2.2 2019-02-15
+
+* Changed `setupPjaxPwa()` so that `withPjaxPwa` defaults to `true`
+* Added `withStartPage` and `withNetworkErrorPage` with default values of `true` to the config options you can pass to `setupPjaxPwa()`
+* Added `NETWORK_ERROR_PAGE_TITLE` and `START_PAGE_TITLE`
 
 ### 0.2.1 2019-02-15
 

@@ -17,8 +17,8 @@
     "bootstrap-flexbox-overlay": "^0.1.4",
     "debug": "^4.1.1",
     "express": "^4.16.4",
-    "express-mustache-overlays": "^0.5.2",
-    "express-public-files-overlays": "^0.1.2",
+    "express-mustache-overlays": "^0.5.3",
+    "express-public-files-overlays": "^0.1.3",
     "express-render-error": "^0.1.3",
     "pjax-pwa-overlay": "file:.."
   },
