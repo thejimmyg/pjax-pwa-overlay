@@ -44,11 +44,12 @@ npm run fix
 
 ## Changelog
 
-### 0.2.2 2019-02-15
+### 0.2.3 2019-02-15
 
 * Changed `setupPjaxPwa()` so that `withPjaxPwa` defaults to `true`
 * Added `withStartPage` and `withNetworkErrorPage` with default values of `true` to the config options you can pass to `setupPjaxPwa()`
 * Added `NETWORK_ERROR_PAGE_TITLE` and `START_PAGE_TITLE`
+* Added default config options
 
 ### 0.2.1 2019-02-15
 
