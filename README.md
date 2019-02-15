@@ -14,7 +14,7 @@ See `./example` for a full example and tutorial.
 
 All the environment variables from express-render-error, express-mustache-overlays and express-public-files-overlays are available in the example, but the following are also available from `bootstrapOptionsFromEnv()`:
 
-* `WITH_PJAX_PWA` - enable or disable the PJAX PWA support, defaults to `'false'`, set to `'true'` to enable PWA support
+* `WITH_PJAX_PWA` - enable or disable the PJAX PWA support, defaults to `'true'`, set to `'false'` to disable PWA support
 * `NETWORK_ERROR_URL` - the URL the PWA should fetch to use in case there is a network error in future
 * `START_URL` - the URL the PWA should fetch to use each time the site is opened (after the user has installed the app)
 
@@ -39,6 +39,11 @@ npm run fix
 
 
 ## Changelog
+
+### 0.2.0 2019-02-15
+
+* Make `WITH_PJAX_PWA` `true` by default
+* Provide deafault icon192 URL and icon
 
 ### 0.1.0 2019-02-06
 

@@ -7,24 +7,24 @@ cd ../
 npm install
 cd example
 npm install
-WITH_PJAX_PWA=true DEBUG='pjax*,express-mustache-overlays' PORT=8000 npm start
+PORT=8000 npm start
 ```
 
 If you get a warning about not being able to install a package, remove your `package-lock.json` file and try again.
 
-For production use you'll want to change the settings in the code, or use environment variables.
-
-To see all the debug logs you should run:
-
-```
-WITH_PJAX_PWA=true DEBUG="*" PORT=8000 npm start
-```
-
-Or to log everything, use:
+To add logging too you can use:
 
 ```
 DEBUG="*" PORT=8000 npm start
 ```
+
+You can choose just a few selected loggers by comma-separating their names like this:
+
+```
+DEBUG="pjax*,express-mustache-overlays" PORT=8000 npm start
+```
+
+For production use you may want to change the settings in the code, or use environment variables.
 
 If you visit http://localhost:8000/ you'll see a page rendered from the `content.mustache` template in bootstreap-flexbox-overlay's `views` directory. 
 

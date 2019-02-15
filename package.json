@@ -1,6 +1,6 @@
 {
   "name": "pjax-pwa-overlay",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A set of mustache templates to be used with express-mustache-overlays and bootstrap-flexbox-overlay that add PJAX (PushState+AJAX) and Progressive Web App support to a project.",
   "scripts": {
     "fix": "standard --fix"
