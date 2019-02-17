@@ -30,7 +30,13 @@ All links within `<div id="pjax-container">` will automatically use PJAX (as lon
 Any form given the ID `data-pjax` will be submitted as multipart via PJAX too. **Only one form per page can have this ID though**. The express-mustache-jwt-signin package's sign in form already has this ID for example.
 
 Since forms are submitted as multipart, you'll need to install middleware that
-can parse that and make it available as `req.body`. For example busboy.
+can parse that and make it available as `req.body`. For example connect-multiparty.
+
+```
+const multipart = require('connect-multiparty')
+const multipartMiddleware = multipart()
+app.use(multipartMiddleware)
+```
 
 **Tip: Debugging PJAX requests can be tricky because the default behaviour if there is an error is to re-fetch and re-load the entire page. To be able to track down errors more easily in your browser, make sure you tick the `Preserve Log` checkbox in the network tab and console so that you can see the failed request as well as the successfull request afterwards.**
 
